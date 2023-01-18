@@ -17,8 +17,8 @@ const Idea = ({ title, description, id, onDelete }: any) => {
 
 export default function Ideas({ onDelete }: any) {
   const { loading, error, data } = useQuery(GET_IDEAS);
-  if (loading) return "loading";
-  if (error) return "error";
+  if (loading) return <div> loading... </div>;
+  if (error) return <div> error... </div>;
   console.log(data);
   // eslint-disable-next-line react/jsx-key
   return (

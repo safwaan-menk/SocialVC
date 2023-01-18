@@ -52,7 +52,7 @@ export default function Home() {
       {/* Navbar */}
       {/* Sidebar */}
       <section></section>
-      <section id="skills" className="snap-start">
+      <section id="ideas" className="snap-start">
         <CreateIdea onSubmit={onSubmit}></CreateIdea>
         <Ideas onDelete={onDelete} />
       </section>
