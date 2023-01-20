@@ -1,36 +1,17 @@
 import Head from "next/head";
 
 import Ideas from "@/components/Ideas";
-import CreateIdea from "@/components/CreateIdea";
 import { useMutation } from "@apollo/client";
 import { ADD_IDEA, DELETE_IDEA } from "@/graphql/queries";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 
 export default function Home() {
-  const [addIdea] = useMutation(ADD_IDEA, {
-    onCompleted: (data) => {
-      window.location.reload;
-    },
-  });
-
   const [deleteIdea] = useMutation(DELETE_IDEA, {
     onCompleted: (data) => {
       window.location.reload;
     },
   });
-
-  const onSubmit = (e: any) => {
-    e.preventDefault();
-    console.log();
-    console.log();
-    addIdea({
-      variables: {
-        title: e.target.title.value,
-        description: e.target.description.value,
-      },
-    });
-  };
 
   const onDelete = (id: String) => {
     deleteIdea({
@@ -39,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="snap-mandatory snap-y overflow-scroll z-0 h-screen">
+    <div className="snap-mandatory snap-y overflow-scroll h-screen scrollbar scrollbar-track-white scrollbar-thumb-[rgb(142,177,217)]">
       <Head>
         <title> SocialVC </title>
       </Head>
@@ -52,8 +33,7 @@ export default function Home() {
       {/* Navbar */}
       {/* Sidebar */}
       <section></section>
-      <section id="ideas" className="snap-start">
-        <CreateIdea onSubmit={onSubmit}></CreateIdea>
+      <section id="ideas" className="snap-end">
         <Ideas onDelete={onDelete} />
       </section>
     </div>

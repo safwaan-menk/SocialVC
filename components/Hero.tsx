@@ -11,14 +11,14 @@ function Hero({}: Props) {
     <div className="h-screen flex flex-column space-y-10 space-x-[-100] items-center justify-center text-center overflow-hidden">
       <div>
         <div>
-          <h2 className="text-sm uppercase font-bold text-[rgb(142,177,217)] tracking-[15px] pb-2">
+          <h2 className="mb-4 lg:text-3xl uppercase font-bold text-[rgb(142,177,217)] tracking-[15px] pb-2">
             Social VC
           </h2>
           <BackgroundBox />
 
-          <h1 className="font-bold">
+          <h1 className="font-bold lg:text-4xl">
             Post your
-            <span className="pb-2 lg:text-2xl font-bold text-[rgb(142,177,217)]">
+            <span className="pb-2 font-bold text-[rgb(142,177,217)]">
               <Typewriter
                 words={[" Ideas", " Pitch Decks", " MVPs", " Experiences"]}
                 loop={false}
@@ -33,7 +33,7 @@ function Hero({}: Props) {
           </h1>
         </div>
         <div>
-          <h1 className="text-4xl lg:text-4xl font-semibold">
+          <h1 className="text-5xl lg:text-8xl font-semibold">
             And get feedback from the community
           </h1>
           <div className="pt-5">
@@ -41,7 +41,7 @@ function Hero({}: Props) {
             <button className="heroButton">Sign Up</button>
           </div>
           <div>
-            <Link href="#">
+            <Link href="#ideas">
               <button className="heroButtonDown">
                 <BsArrowDown />
               </button>
